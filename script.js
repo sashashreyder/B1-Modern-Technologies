@@ -19,6 +19,7 @@ const container = document.querySelector('.card-container');
 /* ---------- RENDER CARD ---------- */
 function renderCard(idx) {
   const { prompt, hint } = data[idx];
+
   container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   container.innerHTML = `
@@ -39,8 +40,20 @@ function renderCard(idx) {
       <p class="feedback" id="feedback"></p>
     </div>`;
 
+  document.getElementById('answerInput').focus();
   document.getElementById('submitBtn').addEventListener('click', checkAnswer);
   document.getElementById('nextBtn').addEventListener('click', nextCard);
+
+  // mobile-specific hint toggle
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    const qmark = document.querySelector('.qmark');
+    qmark.addEventListener('click', e => {
+      document.querySelectorAll('.qmark').forEach(t => {
+        if (t !== e.target) t.classList.remove('active');
+      });
+      qmark.classList.toggle('active');
+    });
+  }
 }
 
 /* ---------- CHECK ---------- */
@@ -57,7 +70,7 @@ function checkAnswer() {
     fb.className   = 'feedback correct';
     score++;
   } else {
-    fb.textContent = `✗ ${correct}`;
+    fb.textContent = `✗ ${data[current].answer}`;
     fb.className   = 'feedback incorrect';
   }
 
