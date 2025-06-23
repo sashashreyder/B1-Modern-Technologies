@@ -1,8 +1,8 @@
 const data = [
   { word: 'Accessible', prompt: 'Voice assistants make tech ___.', answer: 'Accessible', hint: 'Easy to use/access.' },
-  { word: 'To doomscroll', prompt: 'She ___ for hours during the crisis.', answer: 'To doomscroll', hint: 'To obsessively read bad news online.' },
+  { word: 'doomscroll', prompt: 'She ___ for hours during the crisis.', answer: 'doomscrolled', hint: 'To obsessively read bad news online.' },
   { word: 'Disinformation', prompt: 'The viral post about miracle cures was pure ___.', answer: 'Disinformation', hint: 'False information spread deliberately to deceive.' },
-  { word: 'To distract', prompt: 'Constant smartphone notifications ___ students from their studies.', answer: 'To distract', hint: 'To divert attention away from something.' },
+  { word: 'distract', prompt: 'Constant smartphone notifications ___ students from their studies.', answer: 'distract', hint: 'To divert attention away from something.' },
   { word: 'Cryptocurrency', prompt: '___ prices fluctuate wildly.', answer: 'Cryptocurrency', hint: 'Digital money (e.g. Bitcoin).' },
   { word: 'Fact-check', prompt: 'The article includes a ___ at the bottom.', answer: 'Fact-check', hint: 'Verification process.' },
   { word: 'Cloud', prompt: 'She saved her files to the ___.', answer: 'Cloud', hint: 'Online data storage.' },
